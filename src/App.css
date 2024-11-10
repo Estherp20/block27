@@ -1,8 +1,26 @@
 #root {
+  background-color: #e6ecec;
+  border: 5px solid;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-shadow: 0 4px 8px 
+}
+body{
+  background-color: #22c1c3;
+  font-size: 20px;
+}
+
+button{
+  border: 1px;
+  padding: 15px 32px;
+  font-size: 15px;
+  box-shadow: 0 4px 8px #22c1c3; 
+}
+
+button:hover {
+  border-color: #22c1c3;
 }
 
 .logo {
@@ -12,7 +30,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #22c1c3);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -40,3 +58,4 @@
 .read-the-docs {
   color: #888;
 }
+
