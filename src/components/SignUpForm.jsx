@@ -6,10 +6,17 @@ export default function SignUpForm({ setToken }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+    const [validationError, setValidationError] = useState(null);
+
 
     async function handleSubmit(event) {
         event.preventDefault();
         // console.log("Hello");
+
+        if(username.length < 8){
+            setValidationError("The username must be less 8 characters")
+            return;
+        }
 
         try {
             const response = await fetch(
@@ -38,6 +45,7 @@ export default function SignUpForm({ setToken }) {
         <>
             <h2>Sign Up!</h2>
             {error && <p>{error}</p>}
+            {validationError && <p>{validationError}</p>}
             <form onSubmit={handleSubmit}>
                 <label className="useName">
                     Username:{" "}
@@ -57,7 +65,7 @@ export default function SignUpForm({ setToken }) {
                 <br />
                 <br />
 
-                <button className="button">Submit</button>
+                <button>Submit</button>
             </form>
 
         </>
