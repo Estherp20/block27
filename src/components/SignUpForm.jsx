@@ -14,7 +14,11 @@ export default function SignUpForm({ setToken }) {
         // console.log("Hello");
 
         if(username.length < 8){
-            setValidationError("The username must be less 8 characters")
+            setValidationError("The username must be at least 8 characters")
+            return;
+        }
+        if(password.length < 8){
+            setValidationError("The password must be at least 8 characters")
             return;
         }
 
